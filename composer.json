@@ -1,0 +1,22 @@
+{
+    "name": "hexlet/code",
+    "description": "Difference Calculator Project",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "aaa",
+            "email": "azat232@gmail.com"
+        }
+    ],
+    "require": {
+        "docopt/docopt": "^1.0"
+    },
+    "bin": [
+        "bin/gendiff"
+    ]
+}
