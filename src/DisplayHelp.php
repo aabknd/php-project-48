@@ -1,10 +1,10 @@
 <?php
 
-namespace DiffCalculator\Functions;
+namespace DiffDeterminant\DisplayHelp;
 
 use Docopt;
 
-function myFunction1()
+function display()
 {
   $doc = <<<'DOC'
   gendiff -h
@@ -14,10 +14,12 @@ function myFunction1()
   Usage:
     gendiff (-h|--help)
     gendiff (-v|--version)
+    gendiff [--format <fmt>] <firstFile> <secondFile>
   
   Options:
     -h --help                     Show this screen
     -v --version                  Show version
+    --format <fmt>                Report format [default: stylish]
 DOC;
 
   $args = Docopt::handle($doc, array('version'=>'Gendiff'));

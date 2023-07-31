@@ -1,10 +1,10 @@
 {
     "name": "hexlet/code",
-    "description": "Difference Calculator Project",
+    "description": "Difference Determinant Project",
     "license": "MIT",
     "autoload": {
         "files": [
-            "src/functions.php"
+            "src/DisplayHelp.php"
         ]
     },
     "authors": [
