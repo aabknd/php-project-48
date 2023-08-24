@@ -1,28 +1,36 @@
 <?php
 
-namespace DiffDeterminant\DisplayHelp;
+namespace DiffDeterminant\Display;
 
 use Docopt;
 
+use function DiffDeterminant\Differ\genDiff;
+
 function display()
 {
-  $doc = <<<'DOC'
+
+  $doc = <<<DOC
   gendiff -h
 
   Generate diff
-  
+
   Usage:
     gendiff (-h|--help)
     gendiff (-v|--version)
     gendiff [--format <fmt>] <firstFile> <secondFile>
-  
+
   Options:
     -h --help                     Show this screen
     -v --version                  Show version
     --format <fmt>                Report format [default: stylish]
-DOC;
+  DOC;
 
   $args = Docopt::handle($doc, array('version'=>'Gendiff'));
-  foreach ($args as $k=>$v)
-    echo $k.': '.json_encode($v).PHP_EOL;
+
+  $file1 = $args['<firstFile>'];
+  $file2 = $args['<secondFile>'];
+  $format = $args['--format'];
+
+  print_r(genDiff($file1, $file2, $format));
+
 }

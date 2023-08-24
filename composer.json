@@ -4,7 +4,8 @@
     "license": "MIT",
     "autoload": {
         "files": [
-            "src/DisplayHelp.php"
+            "src/Display.php",
+            "src/Differ.php"
         ]
     },
     "authors": [
@@ -14,7 +15,8 @@
         }
     ],
     "require": {
-        "docopt/docopt": "^1.0"
+        "docopt/docopt": "^1.0",
+        "lstrojny/functional-php": "^1.17"
     },
     "bin": [
         "bin/gendiff"
