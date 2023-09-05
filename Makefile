@@ -4,3 +4,6 @@ validate:
 	composer validate
 gendiff:
 	./bin/gendiff
+lint:
+	composer exec --verbose phpcs -- --standard=PSR12 bin src files
+	composer exec --verbose phpstan analize bin src files
