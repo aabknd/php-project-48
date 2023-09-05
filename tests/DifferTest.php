@@ -8,7 +8,7 @@ use function DiffDeterminant\Differ\genDiff;
 
 class DifferTest extends TestCase
 {
-    public function testStylishFormat()
+    public function testStylishFormat(): void
     {
         $file1 = __DIR__ . '/fixtures/file1.json';
         $file2 = __DIR__ . '/fixtures/file2.json';
