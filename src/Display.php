@@ -8,29 +8,27 @@ use function DiffDeterminant\Differ\genDiff;
 
 function display()
 {
+    $doc = <<<DOC
+    gendiff -h
 
-  $doc = <<<DOC
-  gendiff -h
+    Generate diff
 
-  Generate diff
+    Usage:
+      gendiff (-h|--help)
+      gendiff (-v|--version)
+      gendiff [--format <fmt>] <firstFile> <secondFile>
 
-  Usage:
-    gendiff (-h|--help)
-    gendiff (-v|--version)
-    gendiff [--format <fmt>] <firstFile> <secondFile>
+    Options:
+      -h --help                     Show this screen
+      -v --version                  Show version
+      --format <fmt>                Report format [default: stylish]
+    DOC;
 
-  Options:
-    -h --help                     Show this screen
-    -v --version                  Show version
-    --format <fmt>                Report format [default: stylish]
-  DOC;
+    $args = Docopt::handle($doc, array('version' => 'Gendiff'));
 
-  $args = Docopt::handle($doc, array('version'=>'Gendiff'));
+    $file1 = $args['<firstFile>'];
+    $file2 = $args['<secondFile>'];
+    $format = $args['--format'];
 
-  $file1 = $args['<firstFile>'];
-  $file2 = $args['<secondFile>'];
-  $format = $args['--format'];
-
-  print_r(genDiff($file1, $file2, $format));
-
+    print_r(genDiff($file1, $file2, $format));
 }
