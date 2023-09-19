@@ -30,5 +30,6 @@ function display()
     $file2 = $args['<secondFile>'];
     $format = $args['--format'];
 
-    print_r(genDiff($file1, $file2, $format));
+    $diff = genDiff($file1, $file2, $format);
+    print_r($diff);
 }

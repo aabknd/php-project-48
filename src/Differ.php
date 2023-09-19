@@ -2,10 +2,12 @@
 
 namespace DiffDeterminant\Differ;
 
-function genDiff($file1, $file2, $format = 'stylish')
+use function DiffDeterminant\Parsers\parse;
+
+function genDiff(string $file1, string $file2, string $format = 'stylish'): string
 {
-    $data1 = json_decode(file_get_contents($file1), true);
-    $data2 = json_decode(file_get_contents($file2), true);
+    $data1 = parse($file1);
+    $data2 = parse($file2);
 
     $keys = array_unique(array_merge(array_keys($data1), array_keys($data2)));
     sort($keys);

@@ -1,2 +1,5 @@
 /vendor/
 show_script.sh
+show_script_2.sh
+.vscode
+.phpunit.result.cache
